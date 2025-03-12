@@ -1,8 +1,9 @@
 import os
+import pandas as pd
 from src.dsproject import logger
 from sklearn.model_selection import train_test_split
 from src.dsproject.entity.config_entity import DataTransformationConfig
-import pandas as pd
+
 
 
 class DataTransformation:
