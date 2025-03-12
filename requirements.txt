@@ -14,3 +14,4 @@ Flask
 Flask-Cors
 ipykernel
 pylint
+dotenv
