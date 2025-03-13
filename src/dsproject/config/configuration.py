@@ -1,7 +1,7 @@
 import os
 
 from dotenv import load_dotenv
-from src.dsproject.components import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
+from src.dsproject.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
 from src.dsproject.utils.common import read_yaml, create_directories
 
 from src.dsproject.entity.config_entity import DataIngestionConfig, DataValidationConfig,\
