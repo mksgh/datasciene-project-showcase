@@ -1,5 +1,5 @@
-from src.datascience.config.configuration import ConfigurationManager
-from src.datascience.components.model_trainer import ModelTrainer
+from src.dsproject.config.configuration import ConfigurationManager
+from src.dsproject.components.model_trainer import ModelTrainer
 
 STAGE_NAME = "Model Trainer Stage"
 

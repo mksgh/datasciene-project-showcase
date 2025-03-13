@@ -1,6 +1,6 @@
-from src.datascience.config.configuration import ConfigurationManager
-from src.datascience.components.model_evaluation import ModelEvaluation
-from src.datascience import logger
+from src.dsproject.config.configuration import ConfigurationManager
+from src.dsproject.components.model_evaluation import ModelEvaluation
+from src.dsproject import logger
 
 STAGE_NAME = "Model evaluation stage"
 
