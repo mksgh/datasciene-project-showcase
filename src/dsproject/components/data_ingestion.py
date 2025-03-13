@@ -1,7 +1,7 @@
 import os
+import zipfile
 import urllib.request as request
 from src.dsproject import logger
-import zipfile
 from src.dsproject.entity.config_entity import DataIngestionConfig
 
 
