@@ -10,7 +10,7 @@ class DataValiadtion:
         try:
             validation_status = None
 
-            data = pd.read_csv(self.config.unzip_data_dir)
+            data = pd.read_csv(self.config.unzip_data_dir,delimiter = ";")
             all_cols = list(data.columns)
 
             all_schema = self.config.all_schema.keys()

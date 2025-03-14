@@ -13,7 +13,7 @@ class DataTransformation:
     def train_test_splitting(self):
         """Split data into train and test and saving them to csv file"""
 
-        data = pd.read_csv(self.config.data_path)
+        data = pd.read_csv(self.config.data_path, delimiter=';')
 
         # Split the data into training and test sets.
         train, test = train_test_split(data, test_size=0.20)

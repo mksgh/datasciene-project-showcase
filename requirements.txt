@@ -16,3 +16,4 @@ ipykernel
 pylint
 dotenv
 PyYAML
+dagshub
