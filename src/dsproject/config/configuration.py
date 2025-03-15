@@ -4,12 +4,19 @@ from dotenv import load_dotenv
 from src.dsproject.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SCHEMA_FILE_PATH
 from src.dsproject.utils.common import read_yaml, create_directories
 
-from src.dsproject.entity.config_entity import DataIngestionConfig, DataValidationConfig,\
-    DataTransformationConfig, ModelTrainerConfig, ModelEvaluationConfig
+from src.dsproject.entity.config_entity import (
+    DataIngestionConfig,
+    DataValidationConfig,
+    DataTransformationConfig,
+    ModelTrainerConfig,
+    ModelEvaluationConfig,
+    ModelPredictionConfig,
+)
 
 load_dotenv(dotenv_path=".env")
 
 os.environ["MLFLOW_TRACKING_URI"] = os.getenv("MLFLOW_TRACKING_URI")
+
 
 class ConfigurationManager:
     def __init__(
@@ -55,7 +62,7 @@ class ConfigurationManager:
         config = self.config.data_transformation
 
         create_directories([config.root_dir])
-        
+
         data_transformation_config = DataTransformationConfig(
             root_dir=config.root_dir, data_path=config.data_path
         )
@@ -94,6 +101,13 @@ class ConfigurationManager:
             all_params=params,
             metric_file_name=config.metric_file_name,
             target_column=schema.name,
-            mlflow_uri=os.environ["MLFLOW_TRACKING_URI"]
+            mlflow_uri=os.environ["MLFLOW_TRACKING_URI"],
         )
         return model_evaluation_config
+
+    def get_model_prediction_config(self) -> ModelPredictionConfig:
+        config = self.config.model_prediction
+
+        model_prediction_config = ModelPredictionConfig(model_path=config.model_path)
+
+        return model_prediction_config
